@@ -1,0 +1,42 @@
+body{
+  margin: 0;
+  padding: 0;
+  /* background-color: antiquewhite; */
+  height: 100vh;
+  width: 100vw;
+  background: url('../../images/bg.jpg') no-repeat;
+  background-size: cover;
+}
+.outer{
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  
+}
+.inner{
+  width: 40vw;
+  height: 33vh;
+  /* float: left; */
+  position: absolute;
+  /* background-color: rgb(231, 219, 199); */
+  background: url('../../images/border.png') no-repeat;
+  background-size: cover;
+}
+.inner1{
+  left: 5vw;
+}
+.inner2{
+  left: 55vw;
+}
+.inner3{
+  left: 5vw;
+  top: 66.6vh;
+}
+.inner4{
+  left: 55vw;
+  top: 66.6vh;
+}
+.inner5{
+  left: 33.3vw;
+  top: 33.3vh;
+}

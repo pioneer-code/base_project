@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- 导入 layui 的样式 -->
+    <link rel="stylesheet" href="../assets/lib/layui/css/layui.css" />
+    <!-- 导入自己的样式 -->
+    <link rel="stylesheet" href="../assets/css/user/user_info.css" />
+  </head>
+  <body>
+    <!-- 卡片区域 -->
+    <div class="layui-card">
+      <div class="layui-card-header">查看并修改用户信息</div>
+      <div class="layui-card-body">
+        <!-- form 表单区域 -->
+        <form class="layui-form" lay-filter="formUserInfo">
+          <!-- 这是隐藏域 -->
+          <input type="hidden" name="idNumber" value="" />
+          <div class="layui-form-item">
+            <label class="layui-form-label">登录名称</label>
+            <div class="layui-input-block">
+              <input type="text" name="name" required lay-verify="required|nickname" placeholder="请输入名称" autocomplete="off" class="layui-input"  />
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <label class="layui-form-label">用户密码</label>
+            <div class="layui-input-block">
+              <input type="text" name="password" required lay-verify="required|password" placeholder="请输入用户密码" autocomplete="off" class="layui-input" />
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <label class="layui-form-label">用户性别</label>
+            <div class="layui-input-block">
+              <input type="text" name="sex" required lay-verify="required" placeholder="请输入用户性别" autocomplete="off" class="layui-input" />
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <label class="layui-form-label">用户电话</label>
+            <div class="layui-input-block">
+              <input type="text" name="telephone" required lay-verify="required" placeholder="请输入用户电话" autocomplete="off" class="layui-input" />
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <label class="layui-form-label">用户邮箱</label>
+            <div class="layui-input-block">
+              <input type="text" name="email" required lay-verify="required|email" placeholder="请输入用户邮箱" autocomplete="off" class="layui-input" />
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <label class="layui-form-label">用户所在地</label>
+            <div class="layui-input-block">
+              <input type="text" name="nativePlace" required lay-verify="required" placeholder="请输入用户所在地" autocomplete="off" class="layui-input" />
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <label class="layui-form-label">用户学位</label>
+            <div class="layui-input-block">
+              <input type="text" name="educational" required lay-verify="required" placeholder="请输入用户学位" autocomplete="off" class="layui-input" />
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <label class="layui-form-label">毕业学校</label>
+            <div class="layui-input-block">
+              <input type="text" name="graduateSchool" required lay-verify="required" placeholder="请输入用户毕业学校" autocomplete="off" class="layui-input" />
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <label class="layui-form-label">所在公司</label>
+            <div class="layui-input-block">
+              <input type="text" name="company" required lay-verify="required" placeholder="请输入用户所在公司" autocomplete="off" class="layui-input" />
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <label class="layui-form-label">用户职位</label>
+            <div class="layui-input-block">
+              <input type="text" name="departmentName" required lay-verify="required" placeholder="请输入用户职位" autocomplete="off" class="layui-input" />
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <label class="layui-form-label">入职时间</label>
+            <div class="layui-input-block">
+              <input type="text" name="entryTime" required lay-verify="required" placeholder="请输入用户入职时间" autocomplete="off" class="layui-input" />
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <label class="layui-form-label">用户薪资</label>
+            <div class="layui-input-block">
+              <input type="text" name="salary" required lay-verify="required" placeholder="请输入用户薪资" autocomplete="off" class="layui-input" />
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <label class="layui-form-label">职位情况</label>
+            <div class="layui-input-block">
+              <input type="text" name="employ" required lay-verify="required" placeholder="请输入用户职位情况" autocomplete="off" class="layui-input" />
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <label class="layui-form-label">用户技术</label>
+            <div class="layui-input-block">
+              <input type="text" name="technique" required lay-verify="required" placeholder="请输入用户技术" autocomplete="off" class="layui-input" />
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <label class="layui-form-label">自我感觉</label>
+            <div class="layui-input-block">
+              <input type="text" name="evaluation" required lay-verify="required" placeholder="请输入用户自我感觉" autocomplete="off" class="layui-input" />
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <div class="layui-input-block">
+              <button class="layui-btn" lay-submit lay-filter="formDemo">提交修改</button>
+              <button type="reset" class="layui-btn layui-btn-primary" id="btnReset">重置</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- 导入 layui 的 js -->
+    <script src="../assets/lib/layui/layui.all.js"></script>
+    <!-- 导入 jquery -->
+    <script src="../assets/lib/jquery.js"></script>
+    <!-- 导入 baseAPI -->
+    <!-- <script src="../assets/js/baseAPI.js"></script> -->
+    <!-- 导入自己的 js -->
+    <script src="../../code/assets/js/user/user_info.js"></script>
+  </body>
+</html>

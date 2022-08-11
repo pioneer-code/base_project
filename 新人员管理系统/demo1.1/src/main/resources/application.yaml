@@ -1,0 +1,38 @@
+
+spring:
+  # 数据库驱动连接
+  datasource:
+    #mysql8之后需要指定时区和安全连接方式
+    url: jdbc:mysql://119.23.241.76:3306/management?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: answers
+    driver-class-name: com.mysql.jdbc.Driver
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+    serialization:
+      write-dates-as-timestamps: false
+
+#mybatis:
+#  # mybatis配置实体类的路径
+#  type-aliases-package: com.example.demo.bean
+#  # mybatis配置mapper.xml路径
+#  mapper-locations: classpath:/mapper/*.xml
+#  # mybatis全局配置的路径
+#  config-location: classpath:/mybatis-config.xml
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    auto-mapping-behavior: full
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#  mapper-locations: classpath:/mapper/*.xml
+  global-config:
+    # 逻辑删除配置
+    db-config:
+      # 删除前
+      logic-not-delete-value: 1
+      # 删除后
+      logic-delete-value: 0
+
+server:
+  port: 8000

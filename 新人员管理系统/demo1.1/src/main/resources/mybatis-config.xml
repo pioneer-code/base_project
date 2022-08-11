@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--设置日志-->
+    <settings>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+<!--        <setting name="logImpl" value="LOG4J"/>-->
+    </settings>
+
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <!--配置数据源-->
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://119.23.241.76:3306/management?useUnicode=true&amp;characterEncoding=utf8"/>
+                <property name="username" value="root"/>
+                <property name="password" value="answers"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!--指定其他mapper文件的位置：其他mapper文件目的是找到其他文件的sql语句-->
+    <mappers>
+        <!--
+            使用mapper的resource属性指定mapper文件的路径
+            这个路径是从target/classes路径开启的
+            使用注意：
+                resource=“mapper文件的路径，使用/分割路径”
+                一个mapper resource指定一个mapper文件
+        -->
+                <package name="com.example.demo.Mapper"/>
+<!--        <mapper resource="UserMapper.xml"/>-->
+<!--        <mapper resource="org/mybatis/builder/AuthorMapper.xml"/>-->
+    </mappers>
+
+
+</configuration>
